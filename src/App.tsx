@@ -6,22 +6,22 @@ import './App.css';
 import api from './services/api';
 
 interface IData {
-  asin: String;
-  title: String;
-  images: [String];
-  full_link: String;
-  description: String;
-  current_price: Number;
-  current_price_formatted: String;
-  previous_price: Number;
-  previous_price_formatted: String;
-  discount: Number;
-  stars: Number;
+  asin: string;
+  title: string;
+  images: [string];
+  full_link: string;
+  description: string;
+  current_price: number;
+  current_price_formatted: string;
+  previous_price: number;
+  previous_price_formatted: string;
+  discount: number;
+  stars: number;
   amazon_prime: Boolean;
   amazon_choice: Boolean;
   offer_ends: Date;
-  brand: String;
-  category: String;
+  brand: string;
+  category: string;
 }
 
 function App() {
@@ -29,7 +29,6 @@ function App() {
   const [sortBy, setSortBy] = useState('');
   const [filter, setFilter] = useState('');
   const [limit, setLimit] = useState(6);
-  const [pagination, setPagination] = useState<any>();
   const [categories, setCategories] = useState<any>();
 
   const [b2, setB2] = useState<number>(1);
@@ -97,7 +96,7 @@ function App() {
   <header className="navbar">
     <div className="container">
         <div className="navba--section navbar--logo">
-            <a href="#">
+            <a href="/">
               <img src={img2} alt="Offlet" />
             </a>
         </div>
@@ -186,7 +185,7 @@ function App() {
           {
             data && data.map((product) => (
               <article className="cardnews">
-                  <a href="https://google.com.br" target="_blank">
+                  <a href={product.full_link}>
                       <div className="cardnews__image">
                           <img src="https://via.placeholder.com/300" alt="" />
                       </div>
@@ -227,7 +226,7 @@ function App() {
 
                 <ul className="paginacao">
                     <li className="page-item">
-                        <a onClick={() => paginationButton((page - 1))}>
+                        <a href="/" onClick={() => paginationButton((page - 1))}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -237,19 +236,19 @@ function App() {
                         </a>
                     </li>
                     <li className="page-item active">
-                      <a onClick={() => paginationButton(b2)}>{b2}</a>
+                      <a href="ww" onClick={() => paginationButton(b2)}>{b2}</a>
                       </li>
                     <li className="page-item ">
-                      <a onClick={() => paginationButton(b3)}>{b3}</a>
+                      <a href="yy" onClick={() => paginationButton(b3)}>{b3}</a>
                       </li>
                     <li className="page-item">
-                      <a onClick={() => paginationButton(b4)}>{b4}</a>
+                      <a href="/" onClick={() => paginationButton(b4)}>{b4}</a>
                     </li>
                     <li className="page-item">
-                      <a onClick={() => paginationButton(b5)}>{b5}</a>
+                      <a href="/" onClick={() => paginationButton(b5)}>{b5}</a>
                     </li>
                     <li className="page-item">
-                        <a onClick={() => paginationButton((page + 1))}>
+                        <a href="/" onClick={() => paginationButton((page + 1))}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
