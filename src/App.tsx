@@ -61,7 +61,7 @@ function App() {
       await api
       .get('/amazon-offers/products', {
         params: {
-          category: category,
+          category: category === 'All' ? undefined: category,
           sortBy: sortBy,
           filter: filter,
           page: page,
