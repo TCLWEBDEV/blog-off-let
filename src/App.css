@@ -2165,7 +2165,7 @@ h4 {
   .paginacao .page-item {
     flex: 0 1 auto;
     margin-right: 8px; }
-    .paginacao .page-item a {
+    .paginacao .page-item button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -2173,17 +2173,21 @@ h4 {
       height: 40px;
       text-align: center;
       color: #212E63;
-      border-radius: 32px; }
-      .paginacao .page-item a:hover {
+      border-radius: 32px;
+      border: none;
+    }
+      .paginacao .page-item button:hover {
         background-color: #fff;
         color: #E83C4D; }
-        .paginacao .page-item a:hover svg path {
+        .paginacao .page-item button:hover svg path {
           fill: #E83C4D; }
     .paginacao .page-item:last-child {
       margin-right: 0; }
-    .paginacao .page-item.active a {
+    .paginacao .page-item.active button {
       background-color: #E83C4D;
-      color: #fff; }
+      color: #fff;
+      border: none;
+    }
 
 .filters-bar {
   display: flex;

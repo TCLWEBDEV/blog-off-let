@@ -28,7 +28,6 @@ function App() {
   const [category, setCategory] = useState('');
   const [sortBy, setSortBy] = useState('');
   const [filter, setFilter] = useState('');
-  const [limit, setLimit] = useState(6);
   const [categories, setCategories] = useState<any>();
 
   const [b2, setB2] = useState<number>(1);
@@ -51,12 +50,6 @@ function App() {
   };
 
   useEffect( () => {
-    const t = {category: category,
-    sortBy: sortBy,
-    filter: filter,
-    page: page,
-    limit: limit}
-    console.log('aq: ', t)
     const loadProducts = async () => {
       await api.get('/amazon-offers/categories').then(
         (response) => {
@@ -72,7 +65,7 @@ function App() {
           sortBy: sortBy,
           filter: filter,
           page: page,
-          limit: limit,
+          limit: 6,
         },
         headers: {
           latestpageddocs: JSON.stringify([]),
@@ -89,7 +82,7 @@ function App() {
 
     loadProducts();
     
-  }, [sortBy, filter, limit, page, category]);
+  }, [sortBy, filter, page, category]);
 
   return (
     <>
@@ -226,36 +219,36 @@ function App() {
 
                 <ul className="paginacao">
                     <li className="page-item">
-                        <a href="/" onClick={() => paginationButton((page - 1))}>
+                        <button onClick={() => paginationButton((page - 1))}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M13.293 6.29297L7.586 12L13.293 17.707L14.707 16.293L10.414 12L14.707 7.70697L13.293 6.29297Z"
                                     fill="#212E63" />
                             </svg>
-                        </a>
+                        </button>
                     </li>
                     <li className="page-item active">
-                      <a href="ww" onClick={() => paginationButton(b2)}>{b2}</a>
+                      <button onClick={() => paginationButton(b2)}>{b2}</button>
                       </li>
                     <li className="page-item ">
-                      <a href="yy" onClick={() => paginationButton(b3)}>{b3}</a>
+                      <button onClick={() => paginationButton(b3)}>{b3}</button>
                       </li>
                     <li className="page-item">
-                      <a href="/" onClick={() => paginationButton(b4)}>{b4}</a>
+                      <button onClick={() => paginationButton(b4)}>{b4}</button>
                     </li>
                     <li className="page-item">
-                      <a href="/" onClick={() => paginationButton(b5)}>{b5}</a>
+                      <button onClick={() => paginationButton(b5)}>{b5}</button>
                     </li>
                     <li className="page-item">
-                        <a href="/" onClick={() => paginationButton((page + 1))}>
+                        <button onClick={() => paginationButton((page + 1))}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.707 17.707L16.414 12L10.707 6.29297L9.293 7.70697L13.586 12L9.293 16.293L10.707 17.707Z"
                                     fill="#212E63" />
                             </svg>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -277,7 +270,7 @@ function App() {
         <div className="widget widget-follow">
             <ul className="social-menu">
                 <li className="social-item">
-                    <a href="#">
+                    <a href="/">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -288,7 +281,7 @@ function App() {
                         </a>
                 </li>
                 <li className="social-item">
-                    <a href="#">
+                    <a href="/">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -306,7 +299,7 @@ function App() {
                         </a>
                 </li>
                 <li className="social-item">
-                    <a href="#">
+                    <a href="/">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
