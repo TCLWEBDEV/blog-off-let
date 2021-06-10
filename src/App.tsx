@@ -180,7 +180,7 @@ function App() {
               <article className="cardnews">
                   <a href={product.full_link}>
                       <div className="cardnews__image">
-                          <img src="https://via.placeholder.com/300" alt="" />
+                          <img src={product.images[0]} alt="" />
                       </div>
                       <div className="cardnews__body">
                           <div className="cardnews__content">
