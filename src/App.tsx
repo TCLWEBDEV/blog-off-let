@@ -119,7 +119,10 @@ function App() {
         </div>
         <ul className="menu">
           <li className="menu-item">
-            <a href="mailto:contact@offlet.com">Suport</a>
+            <a href="mailto:contact@offlet.com">Support</a>
+          </li>
+          <li className="menu-item">
+            <a href="mailto:contact@offlet.com">Privacy</a>
           </li>
         </ul>
       </div>
@@ -269,19 +272,9 @@ function App() {
 
         <div className="widget widget-follow">
             <ul className="social-menu">
+                
                 <li className="social-item">
-                    <a href="/">
-                        <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.397 20.9962V12.8002H16.162L16.573 9.59117H13.397V7.54717C13.397 6.62117 13.655 5.98717 14.984 5.98717H16.668V3.12617C15.849 3.03817 15.025 2.99617 14.201 2.99917C11.757 2.99917 10.079 4.49117 10.079 7.23017V9.58517H7.332V12.7942H10.085V20.9962H13.397Z"
-                                fill="#F0F1F4" />
-                        </svg>
-
-                        </a>
-                </li>
-                <li className="social-item">
-                    <a href="/">
+                    <a href="https://www.instagram.com/offlet_app/">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -298,21 +291,7 @@ function App() {
 
                         </a>
                 </li>
-                <li className="social-item">
-                    <a href="/">
-                        <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7.17101 5.00782C7.17101 6.21622 6.19141 7.19582 4.98301 7.19582C3.77461 7.19582 2.79501 6.21622 2.79501 5.00782C2.79501 3.79942 3.77461 2.81982 4.98301 2.81982C6.19141 2.81982 7.17101 3.79942 7.17101 5.00782Z"
-                                fill="#F0F1F4" />
-                            <path
-                                d="M9.237 20.9932V8.8542H12.855V10.5142H12.906C13.409 9.5612 14.639 8.5542 16.474 8.5542C20.296 8.5542 21 11.0672 21 14.3372V20.9942H17.229V15.0902C17.229 13.6832 17.205 11.8722 15.268 11.8722C13.304 11.8722 13.006 13.4062 13.006 14.9902V20.9932H9.237Z"
-                                fill="#F0F1F4" />
-                            <path d="M6.87 8.8542H3.095V20.9932H6.87V8.8542Z" fill="#F0F1F4" />
-                        </svg>
-
-                        </a>
-                </li>
+                
             </ul>
         </div>
     </div>
