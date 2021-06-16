@@ -57,7 +57,7 @@ const Privacy: React.FC = () => {
     <div className="page-content container">
         <div className="row">
             <div className="col">
-              <h4>General Conditions of Use for Off-Let app and site.</h4>
+              <h4>General Conditions of Use for Off-Let app and site. </h4>
               <br />
                 <p>
                 Off-Let is an aggregator and importer of offers from other platforms, which are ranked and categorized through the intellectual property algorithm of TCL WEB SITES EIRELI. We take no responsibility for the content of the offers, which is the sole responsibility of the respective retailer.
