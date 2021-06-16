@@ -115,10 +115,10 @@ function App() {
         </div>
         <ul className="menu">
           <li className="menu-item">
-            <a href="mailto:contact@offlet.com">Support</a>
+            <a href="/contact">Support</a>
           </li>
           <li className="menu-item">
-            <a href="mailto:contact@offlet.com">Privacy</a>
+            <a href="/privacy">Privacy</a>
           </li>
         </ul>
       </div>

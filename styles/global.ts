@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
- @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 /**
  *  SETTINGS
  */
@@ -56,7 +55,7 @@ img {
   max-width: 100%; }
 
 strong {
-  font-weight: 600; }
+  font-weight: 700; }
 
 ul {
   margin-bottom: 1em; }
@@ -297,6 +296,8 @@ body {
   color: #272727;
   font-family: "Lato", sans-serif;
   font-size: 16px;
+  width: 100%;
+  height: 100%;
   font-weight: 400;
   line-height: 1.5em; }
 
@@ -463,10 +464,11 @@ button {
   cursor: pointer; }
 
 .button {
-  background-color: #03a9f4;
+  background-color: #E83C4D;
   border: 0;
   border-radius: 200px;
   color: #fff;
+  min-width: 88px;
   display: inline-block;
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -482,7 +484,7 @@ button {
   .button:focus, .button:hover, .button:active {
     color: #fff; }
   .button:hover {
-    background-color: rgba(3, 169, 244, 0.8);
+    background-color: #8b242e;
     color: #fff;
     cursor: pointer;
     text-decoration: none; }
@@ -886,6 +888,17 @@ input:-webkit-autofill {
   to {
     left: 100%; } }
 
+// privacy page styles
+.page-heading {
+  background-color: #d3d5e0;
+  padding: 56px 0; }
+  .page-heading__title {
+    margin: 0; }
+
+    .page-content {
+  padding-top: 48px;
+ }
+
 /**
  *  LOADING SPINNER
  *
@@ -899,6 +912,8 @@ input:-webkit-autofill {
  *  </div>
  *
  */
+
+
 .loadingSpinner {
   animation: rotateLoader 4s infinite;
   animation-timing-function: ease-in-out;
@@ -1279,6 +1294,11 @@ input:-webkit-autofill {
   flex-wrap: wrap;
   margin-right: -12px;
   margin-left: -12px; }
+
+  .colTemp {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%; }
 
 .no-gutters {
   margin-left: 0;
@@ -1916,8 +1936,15 @@ body {
   color: #212E63; }
 
 h1,
-h2,
-h3,
+h2 {
+  font-size: 2.441rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.953rem;
+  margin-bottom: 19px;
+ }
 h4 {
   font-weight: 600; }
 
@@ -1927,11 +1954,12 @@ h4 {
   .select:after, .select:before {
     background: #212E63; }
 
-.input {
-  border-radius: 8px; }
-
+.input1 {
+  border-radius: 8px;
+ }
 .wrapper {
   padding: 0 0 48px;
+  margin-bottom: 22%;
   z-index: 10; }
 
 @media (min-width: 768px) {
