@@ -67,6 +67,7 @@ li {
 /**
  *  BACKGROUND
  */
+
 .bg-primary {
   background-color: #03a9f4; }
 
@@ -247,6 +248,9 @@ li {
 /**
  * LAYOUT
  */
+ .bold-p {
+   font-weight: bold;
+ }
 .section {
   padding-bottom: 36px;
   padding-top: 36px; }
