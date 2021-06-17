@@ -12,7 +12,7 @@
 /.next/
 /out/
 /_static/
-/*.js
+
 
 # production
 /build
