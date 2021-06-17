@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build"
+    "export": "npm run build && next export -o _static"
   },
   "dependencies": {
     "@types/react": "^17.0.0",
