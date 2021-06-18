@@ -14,6 +14,7 @@ interface IData {
   discount: number;
   stars: number;
   amazon_prime: Boolean;
+  site: string;
   amazon_choice: Boolean;
   offer_ends: Date;
   brand: string;
@@ -115,10 +116,10 @@ function App() {
         </div>
         <ul className="menu">
           <li className="menu-item">
-            <a href="/contact">Support</a>
+            <a href="/contact" target="_blank">Support</a>
           </li>
           <li className="menu-item">
-            <a href="/privacy">Privacy</a>
+            <a href="/privacy" target="_blank">Privacy</a>
           </li>
         </ul>
       </div>
@@ -177,7 +178,7 @@ function App() {
           {
             data && data.map((product) => (
               <article className="cardnews">
-                  <a href={product.full_link}>
+                  <a href={product.full_link} target="_blank">
                       <div className="cardnews__image">
                           <img src={product.images[0]} alt="" />
                       </div>
@@ -206,7 +207,7 @@ function App() {
                                           d="M1.19802 1.9387C1.04129 1.48014 1.47964 1.04151 1.9383 1.19794L10.5374 4.1307C10.9462 4.27011 11.067 4.7899 10.7616 5.09528L9.01979 6.83711L12.6625 10.4798C12.8903 10.7076 12.8903 11.077 12.6625 11.3048L11.3047 12.6625C11.0769 12.8903 10.7076 12.8903 10.4798 12.6625L6.83533 9.01809L5.0935 10.7453C4.78771 11.0485 4.27005 10.9272 4.13078 10.5197L1.19802 1.9387ZM2.68624 2.68568L4.93349 9.26096L6.83881 7.37165L10.8922 11.4251L11.425 10.8923L7.36987 6.83711L9.2744 4.93259L2.68624 2.68568Z"
                                           fill="#7A82A2" />
                                   </svg>
-                                  amazon.com.br
+                                  {product.site}
                               </small>
                           </div>
                       </div>
@@ -270,7 +271,7 @@ function App() {
             <ul className="social-menu">
 
                 <li className="social-item">
-                    <a href="https://www.instagram.com/offlet_app/">
+                    <a href="https://www.instagram.com/offlet_app/" target="_blank">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path

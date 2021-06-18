@@ -32,10 +32,10 @@ const Privacy: React.FC = () => {
 
        <ul className="menu">
      <li className="menu-item">
-         <a href="/privacy">Privacy Policy</a>
+         <a href="/privacy" target="_blank">Privacy Policy</a>
      </li>
      <li className="menu-item">
-         <a href="/contact">Contact</a>
+         <a href="/contact" target="_blank">Contact</a>
      </li>
  </ul>
     </div>
@@ -115,7 +115,7 @@ When you access Off-Let, we have access to data such as your device, its IP addr
         <div className="widget widget-follow">
             <ul className="social-menu">
                 <li className="social-item">
-                    <a href="https://www.instagram.com/offlet_app/">
+                    <a href="https://www.instagram.com/offlet_app/" target="_blank">
                         <svg className="icone" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
