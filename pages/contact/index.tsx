@@ -1,6 +1,19 @@
 import React from 'react'
+import { handleSubmitEmail } from '../../utils/emailjs';
 
-const Home: React.FC = () => {
+
+
+const handleSubmit = async (e: any) => {
+  e.preventDefault();
+   handleSubmitEmail(e);
+  // if (request) {
+  //   alert(request)
+  // } else {
+  //   alert(request)
+  // }
+}
+
+const Contact: React.FC = () => {
   return (
     <>
   <header className="navbar">
@@ -60,22 +73,22 @@ const Home: React.FC = () => {
         <div className="row">
             <div className="col-sm-2"></div>
             <div className="col">
-                <form action="">
+                <form id="contact-form" onSubmit={(e: any) => handleSubmit(e)}>
                     <label className="label" >Name</label>
                     <div className="input input-fullWidth">
-                        <input id="name" placeholder="Name" type="text" />
+                        <input name="user_name" placeholder="Name" type="text" />
                     </div>
                     <label className="label" >Email</label>
                     <div className="input input-fullWidth">
-                        <input id="email" placeholder="Email" type="text" />
+                        <input name="user_email" placeholder="Email" type="text" />
                     </div>
                     <label className="label" >Subject</label>
                     <div className="input input-fullWidth">
-                        <input id="subject" placeholder="Input" type="text"/>
+                        <input name="user_subject" placeholder="Input" type="text"/>
                     </div>
                     <label className="label" >Message</label>
                     <div className="textarea textarea-fullWidth">
-                        <textarea id="message"></textarea>
+                        <textarea name="message"></textarea>
                     </div>
                     <button className="button button--accent" type="submit">Send</button>
                 </form>
@@ -124,4 +137,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default Contact
