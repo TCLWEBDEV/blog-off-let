@@ -1,9 +1,8 @@
-import { init, sendForm } from 'emailjs-com';
+// import { init } from 'emailjs-com';
 
 // const init = dynamic(import('emailjs-com').then((a) => a.init), {ssr: false});
 // dynamic(() => import('emailjs-com'));
 
-init("user_nCHWPAXlvh206bYB5x1Ma");
 
 
 const apiKey = {
@@ -12,7 +11,13 @@ const apiKey = {
   SERVICE_ID: 'service_utuibsj'
   }
 
-export const handleSubmitEmail = (e: any) => {
+export const handleSubmitEmail = async (e: any) => {
+
+  const init = (await import('emailjs-com')).init;
+
+  init("user_nCHWPAXlvh206bYB5x1Ma");
+
+  const sendForm = (await import('emailjs-com')).sendForm;
 
   sendForm(apiKey.SERVICE_ID, apiKey.TEMPLATE_ID, e.target, apiKey.USER_ID)
   .then((result: any) => {
