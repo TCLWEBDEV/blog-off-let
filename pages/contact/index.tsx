@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                     </div>
                     <label className="label" >Subject</label>
                     <div className="input input-fullWidth">
-                        <input name="user_subject" placeholder="Input" type="text"/>
+                        <input name="user_subject" placeholder="Subject" type="text"/>
                     </div>
                     <label className="label" >Message</label>
                     <div className="textarea textarea-fullWidth">
