@@ -41,9 +41,9 @@ function App() {
     }
     setPage(num);
     setB2(num + 0);
-    setB3(num + 2);
-    setB4(num + 3);
-    setB5(num + 4);
+    setB3(num + 1);
+    setB4(num + 2);
+    setB5(num + 3);
   };
 
   useEffect( () => {
