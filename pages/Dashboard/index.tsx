@@ -23,7 +23,7 @@ interface IData {
 
 function App() {
   const [category, setCategory] = useState('');
-  const [sortBy, setSortBy] = useState('');
+  const [sortBy, setSortBy] = useState('hDiscount');
   const [filter, setFilter] = useState('');
   const [categories, setCategories] = useState<any>();
 
@@ -162,7 +162,7 @@ function App() {
 
                     <div className="select order-filter">
                         <select onChange={(event) => setSortBy(event.target.value)} >
-                            <option>Sort</option>
+                            <option>Bigger Discount</option>
                             <option value='hDiscount'>Bigger Discount</option>
                             <option value='lDiscount'>Lower Discount</option>
                             <option value='expensive'>HigherPrice</option>
