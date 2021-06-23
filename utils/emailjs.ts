@@ -22,9 +22,12 @@ export const handleSubmitEmail = async (e: any) => {
   sendForm(apiKey.SERVICE_ID, apiKey.TEMPLATE_ID, e.target, apiKey.USER_ID)
   .then((result: any) => {
   console.log("Message Sent, We will get back to you shortly", result.text);
+  alert('Message Sent, We will get back to you shortly')
+  window.location.reload();
   },
   (error) => {
   console.log("An error occurred, Please try again", error.text);
-  // alert('An error occurred, Please try again')
+  alert('An error occurred, Please try again')
+
   });
   };

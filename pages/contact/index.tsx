@@ -5,11 +5,13 @@ import { handleSubmitEmail } from '../../utils/emailjs';
 
 const handleSubmit = async (e: any) => {
   e.preventDefault();
-   handleSubmitEmail(e);
-  // if (request) {
-  //   alert(request)
+  handleSubmitEmail(e);
+
+  // console.log(response)
+  // if (response) {
+  //   console.log('deu certo', response)
   // } else {
-  //   alert(request)
+  //   console.log(response)
   // }
 }
 
