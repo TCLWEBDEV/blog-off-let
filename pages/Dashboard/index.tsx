@@ -3,6 +3,7 @@ import ScrollComponent from 'react-infinite-scroller';
 import api from '../../services/api';
 
 interface IData {
+  _id: string;
   asin: string;
   title: string;
   images: [string];
