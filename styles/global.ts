@@ -2189,6 +2189,15 @@ h4 {
   border: none;
   color: #E83C4D;
 }
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+}
+.loading-gif {
+  width: 7%;
+}
 .paginacao {
   list-style: none;
   margin: 0;
@@ -2266,5 +2275,6 @@ h4 {
           margin-right: 8px; }
         #footer .widget .social-menu li:last-child {
           margin-right: 0; }
+
 
 `

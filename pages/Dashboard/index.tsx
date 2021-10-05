@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import ScrollComponent from 'react-infinite-scroller';
 import api from '../../services/api';
 
 interface IData {
@@ -27,77 +28,87 @@ function App() {
   const [filter, setFilter] = useState('');
   const [categories, setCategories] = useState<any>();
 
-  const [b2, setB2] = useState<number>(1);
-  const [b3, setB3] = useState<number>(2);
-  const [b4, setB4] = useState<number>(3);
-  const [b5, setB5] = useState<number>(4);
-  const [page, setPage] = useState<number>(1);
-  const [prevY, setPrevY] = useState<number>(1);
-  const [loading, setLoading] = useState(false);
-
   const [data, setData] = useState<IData[]>([]);
 
-  const loadingRef = useRef();
-
-
-  const handleObserver = (entities: any) => {
-    const y = entities[0].boundingClientRect.y;
-    if (prevY > y) {
-      setPage(page + 1);
-    }
-    setPrevY(y);
+  const loadProducts = async (page?: number) => {
+    console.log('pagina number: ', page)
+    await api.get('/amazon-offers/categories').then(
+      (response) => {
+        setCategories(response.data);
+      }
+    ).catch((error) => {
+      console.log('category error:', error)
+    })
+    await api
+    .get('/amazon-offers/products', {
+      params: {
+        category: category === 'All' ? undefined: category,
+        sortBy: sortBy,
+        filter: filter,
+        page: page,
+        limit: 6,
+      },
+      headers: {
+        latestpageddocs: JSON.stringify([]),
+      },
+    })
+    .then((response) => {
+      const newData = [...data, ...response.data.data];
+      setData(newData);
+      console.log({dadosNovos: newData})
+      console.log({dados: response.data.data})
+      // setTimeout(() => setControl(true), 100)
+    })
+    .catch((error) => {
+      console.log(error)
+    });
   }
 
+  // const handleObserver = (entities: any) => {
+  //   const y = entities[0].boundingClientRect.y;
+  //   if (prevY > y) {
+  //     setPage(page + 1);
+  //   }
+  //   setPrevY(y);
+  // }
+  //   const observer = new IntersectionObserver( async (entries) => {
+  //     await api.get('/amazon-offers/products', {
+  //       params: {
+  //         category: category === 'All' ? undefined: category,
+  //         sortBy: sortBy,
+  //         filter: filter,
+  //         page: page + 1,
+  //         limit: 6,
+  //       },
+  //       headers: {
+  //         latestpageddocs: JSON.stringify([]),
+  //       },
+  //     })
+  //     .then((response) => {
+  //       const newData = [...data, ...response.data.data];
+  //       setData(newData);
+  //       setPage(page + 1);
+  //       console.log({dadosNovos: newData})
+  //       console.log({dados: response.data.data})
+  //       // setTimeout(() => setControl(true), 100)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     });
+  // }
+  //   // {handleObserver(entries)}
+  // );
+
+  // observer.observe(loadingRef.current);
+
+
   useEffect( () => {
-    setLoading(true);
-    const loadProducts = async () => {
-      await api.get('/amazon-offers/categories').then(
-        (response) => {
-          setCategories(response.data);
-        }
-      ).catch((error) => {
-        console.log('category error:', error)
-      })
-      await api
-      .get('/amazon-offers/products', {
-        params: {
-          category: category === 'All' ? undefined: category,
-          sortBy: sortBy,
-          filter: filter,
-          page: page,
-          limit: 6,
-        },
-        headers: {
-          latestpageddocs: JSON.stringify([]),
-        },
-      })
-      .then((response) => {
-        const newData = [...data, ...response.data.data];
-        setData(newData);
-        console.log({dadosNovos: newData})
-        console.log({dados: response.data.data})
-        // setTimeout(() => setControl(true), 100)
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-    }
+
 
     loadProducts();
-    const options = {
-      root: null,
-      rootMargin: "4px",
-      threshold: 1.0
-    };
 
-    const observer = new IntersectionObserver(entries =>
-      handleObserver(entries),
-      options,
-    );
-    observer.observe(loadingRef.current);
 
-  }, [sortBy, filter, page, category]);
+  }, [sortBy, filter, category]);
 
   return (
     <>
@@ -191,53 +202,59 @@ function App() {
                 </div>
 
 
-
-        <div className="grid-articles">
-          {
-            data && data.map((product) => (
-              <article className="cardnews">
-                  <a href={product.full_link} target="_blank">
-                      <div className="cardnews__image">
-                          <img src={product.images[0]} alt="" />
-                      </div>
-                      <div className="cardnews__body">
-                          <div className="cardnews__content">
-                              <h4 className="cardnews__title">
-                                  {product.title}
-                              </h4>
-                              <div className="cardnews__prices">
-                                  <span className="promotionalprice">
-                                      {product.previous_price_formatted}
-                                  </span>
-                                  <span className="price">
-                                      {product.current_price_formatted}
-                                  </span>
-                                  <span className="badge-price">
-                                      {product.discount}% OFF
-                                  </span>
-                              </div>
-                              <p className="cardnews__expert">
-                              {product.description}
-                              </p>
-                              <small className="site-offer">
-                                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path fillRule="evenodd" clipRule="evenodd"
-                                          d="M1.19802 1.9387C1.04129 1.48014 1.47964 1.04151 1.9383 1.19794L10.5374 4.1307C10.9462 4.27011 11.067 4.7899 10.7616 5.09528L9.01979 6.83711L12.6625 10.4798C12.8903 10.7076 12.8903 11.077 12.6625 11.3048L11.3047 12.6625C11.0769 12.8903 10.7076 12.8903 10.4798 12.6625L6.83533 9.01809L5.0935 10.7453C4.78771 11.0485 4.27005 10.9272 4.13078 10.5197L1.19802 1.9387ZM2.68624 2.68568L4.93349 9.26096L6.83881 7.37165L10.8922 11.4251L11.425 10.8923L7.36987 6.83711L9.2744 4.93259L2.68624 2.68568Z"
-                                          fill="#7A82A2" />
-                                  </svg>
-                                  {product.site}
-                              </small>
-                          </div>
-                      </div>
-                  </a>
-              </article>
-            ))
-          }
-          </div>
-
-            <div ref={loadingRef}>
-              <span>Loading...</span>
+        <ScrollComponent
+        pageStart={0}
+        loadMore={loadProducts}
+        hasMore={true}
+        loader={
+        <div className="loading">
+          <img className="loading-gif" src="/loadingif.gif" alt="Loading.." />
+        </div>
+        }
+        >
+          <div className="grid-articles">
+            {
+              data && data.map((product) => (
+                <article key={product._id} className="cardnews">
+                    <a href={product.full_link} target="_blank">
+                        <div className="cardnews__image">
+                            <img src={product.images[0]} alt="" />
+                        </div>
+                        <div className="cardnews__body">
+                            <div className="cardnews__content">
+                                <h4 className="cardnews__title">
+                                    {product.title}
+                                </h4>
+                                <div className="cardnews__prices">
+                                    <span className="promotionalprice">
+                                        {product.previous_price_formatted}
+                                    </span>
+                                    <span className="price">
+                                        {product.current_price_formatted}
+                                    </span>
+                                    <span className="badge-price">
+                                        {product.discount}% OFF
+                                    </span>
+                                </div>
+                                <p className="cardnews__expert">
+                                {product.description}
+                                </p>
+                                <small className="site-offer">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                            d="M1.19802 1.9387C1.04129 1.48014 1.47964 1.04151 1.9383 1.19794L10.5374 4.1307C10.9462 4.27011 11.067 4.7899 10.7616 5.09528L9.01979 6.83711L12.6625 10.4798C12.8903 10.7076 12.8903 11.077 12.6625 11.3048L11.3047 12.6625C11.0769 12.8903 10.7076 12.8903 10.4798 12.6625L6.83533 9.01809L5.0935 10.7453C4.78771 11.0485 4.27005 10.9272 4.13078 10.5197L1.19802 1.9387ZM2.68624 2.68568L4.93349 9.26096L6.83881 7.37165L10.8922 11.4251L11.425 10.8923L7.36987 6.83711L9.2744 4.93259L2.68624 2.68568Z"
+                                            fill="#7A82A2" />
+                                    </svg>
+                                    {product.site}
+                                </small>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+              ))
+            }
             </div>
+            </ScrollComponent>
             </div>
 
         </div>
