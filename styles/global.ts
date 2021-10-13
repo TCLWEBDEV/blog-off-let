@@ -2130,11 +2130,12 @@ h4 {
           overflow: hidden; }
     .cardnews a .site-offer {
       display: flex;
-      font-size: 0.8125rem;
+      font-size: 1.2rem;
       color: #7a82a2;
       align-items: center; }
       .cardnews a .site-offer svg {
-        margin-right: 6px; }
+        margin-right: 6px;
+      }
   .cardnews:hover {
     transform: translateY(-3px); }
     .cardnews:hover a {
