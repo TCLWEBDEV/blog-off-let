@@ -1840,7 +1840,7 @@ input:-webkit-autofill {
 
 .navbar {
   background-color: #212E63;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -1972,11 +1972,23 @@ h4 {
 
 .s-hero {
   position: relative;
+  margin-bottom: 64px;
   background: #212E63;
   padding: 0;
-  margin-bottom: 64px; }
-  @media (min-width: 768px) {
+  padding-top: 3%;
+
+}
+@media (max-width: 768px) {
+
     .s-hero {
+      width: max-content;
+      margin-top: 84px;
+      padding: 56px 0 0;
+      margin-bottom: 96px; } }
+  @media (min-width: 768px) {
+  width: max-content;
+    .s-hero {
+      margin-top: 84px;
       padding: 56px 0 0;
       margin-bottom: 96px; } }
   .s-hero .container {
@@ -2065,13 +2077,17 @@ h4 {
       border: 1px solid #edeef3;
       border-radius: 8px;
       margin-right: 24px;
-      width: 96px;
+      max-width: 12rem;
       height: 96px;
       padding: 8px; }
-      @media (min-width: 768px) {
+      @media (max-width: 768px) {
         .cardnews a .cardnews__image {
-          width: 180px;
-          height: 180px; } }
+          width: 96px;
+          height: 96px; } }
+      @media (min-width: 768px) {
+    .cardnews a .cardnews__image {
+      width: 12.0rem;
+      height: 180px; } }
       .cardnews a .cardnews__image img {
         width: 100%;
         height: 100%; }

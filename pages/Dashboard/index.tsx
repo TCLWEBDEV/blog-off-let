@@ -124,7 +124,7 @@ function App() {
 
   return (
     <>
-  <header className="navbar">
+  <div className="navbar">
     <div className="container">
         <div className="navba--section navbar--logo">
             <a href="/">
@@ -165,7 +165,7 @@ function App() {
         </ul>
       </div>
     </div>
-  </header>
+  </div>
 
 
 <main className="wrapper">
@@ -242,7 +242,7 @@ function App() {
               <article key={product._id} className="cardnews">
                   <a href={product.full_link} target="_blank">
                       <div className="cardnews__image">
-                          <img src={product.images[0]} alt="" />
+                          <img  src={product.images[0]} alt="" />
                       </div>
                       <div className="cardnews__body">
                           <div className="cardnews__content">
