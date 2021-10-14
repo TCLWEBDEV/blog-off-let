@@ -203,7 +203,6 @@ function App() {
 
                     <div className="select order-filter">
                         <select onChange={(event) => setSortBy(event.target.value)} >
-                            <option>Bigger Discount</option>
                             <option value='hDiscount'>Bigger Discount</option>
                             <option value='lDiscount'>Lower Discount</option>
                             <option value='expensive'>HigherPrice</option>
