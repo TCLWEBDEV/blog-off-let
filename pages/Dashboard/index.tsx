@@ -127,7 +127,7 @@ function App() {
   <div className="navbar">
     <div className="container">
         <div className="navba--section navbar--logo">
-            <a href="/">
+            <a href="https://off-let.com">
               <img src="/logo-navbar.svg" alt="Offlet" />
             </a>
         </div>
