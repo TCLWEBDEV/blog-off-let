@@ -157,7 +157,7 @@ function App() {
         </div>
         <ul className="menu">
           <li className="menu-item">
-            <a href="/contact" target="_blank">Support</a>
+            <a href="https://off-let.com/support/" target="_blank">Support</a>
           </li>
           <li className="menu-item">
             <a href="/privacy" target="_blank">Privacy</a>
