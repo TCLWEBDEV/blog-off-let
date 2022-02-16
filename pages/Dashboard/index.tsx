@@ -36,7 +36,7 @@ function App() {
 
   const loadProducts = async () => {
     setLoadComponent(true);
-    await api.get('/amazon-offers/categories').then(
+    await api.get('/sections').then(
       (response) => {
         setCategories(response.data);
       }
@@ -47,9 +47,9 @@ function App() {
     console.log('pagina number: ', page);
 
     await api
-    .get('/amazon-offers/products', {
+    .get('/products/offers', {
       params: {
-        category: category === 'All' ? undefined: category,
+        category: category,
         sortBy: sortBy,
         filter: filter,
         page: page,
@@ -60,6 +60,7 @@ function App() {
       },
     })
     .then((response) => {
+
         if (response.data.data.length === 0) {
         setLoad(false);
         setLoadComponent(false);
@@ -76,7 +77,7 @@ function App() {
 
   const loadProductsToParams = async () => {
     setLoad(false);
-    await api.get('/amazon-offers/categories').then(
+    await api.get('/sections').then(
       (response) => {
         setCategories(response.data);
       }
@@ -85,9 +86,9 @@ function App() {
     });
 
     await api
-    .get('/amazon-offers/products', {
+    .get('/products/offers', {
       params: {
-        category: category === 'All' ? undefined: category,
+        category: category,
         sortBy: sortBy,
         filter: filter,
         page: page,
@@ -194,7 +195,7 @@ function App() {
                         <select onChange={(event) => setCategory(event.target.value)} >
                             {
                               categories && categories.map((cat: any) => (
-                                <option key={cat._id}>{cat.name}</option>
+                                <option key={cat.id}>{cat.name}</option>
                               ))
                             }
 
