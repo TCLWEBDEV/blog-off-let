@@ -3,7 +3,7 @@ import ScrollComponent from 'react-infinite-scroller';
 import api from '../../services/api';
 
 interface IData {
-  _id: string;
+  id: string;
   asin: string;
   title: string;
   images: [string];
@@ -247,7 +247,7 @@ function App() {
         <div className="grid-articles">
           {
             data && data.map((product) => (
-              <article key={product._id} className="cardnews">
+              <article key={product.id} className="cardnews">
                   <a href={product.full_link} target="_blank">
                       <div className="cardnews__image">
                           <img  src={product.images[0]} alt="" />
