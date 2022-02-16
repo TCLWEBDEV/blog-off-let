@@ -76,6 +76,11 @@ function App() {
   }
 
   const loadProductsToParams = async () => {
+    console.log({
+      sortBy,
+      filter,
+      category,
+    })
     setLoad(false);
     await api.get('/sections').then(
       (response) => {
@@ -100,7 +105,10 @@ function App() {
     })
     .then((response) => {
       setData(response.data.data);
-      setTimeout(() => setLoad(true), 1000);
+      console.log({
+        res: response.data.data,
+      })
+      setTimeout(() => setLoad(true), 2000);
     })
     .catch((error) => {
       console.log(error)
