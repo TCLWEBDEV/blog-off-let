@@ -25,7 +25,7 @@ interface IData {
 
 function App() {
   const [category, setCategory] = useState('');
-  const [sortBy, setSortBy] = useState('hDiscount');
+  const [sortBy, setSortBy] = useState('');
   const [filter, setFilter] = useState('');
   const [categories, setCategories] = useState<any>();
   const [load, setLoad] = useState(true);
