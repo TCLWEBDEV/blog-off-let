@@ -31,6 +31,7 @@ function App() {
   const [load, setLoad] = useState(true);
   const [loadComponent, setLoadComponent] = useState(true);
   const [page, setPage] = useState(1);
+  const [featured, setFeatured] = useState('yes');
 
   const [data, setData] = useState<IData[]>([]);
 
@@ -54,6 +55,7 @@ function App() {
         filter: filter,
         page: page,
         limit: 6,
+        featured,
       },
       headers: {
         latestpageddocs: JSON.stringify([]),
@@ -147,7 +149,10 @@ function App() {
           id="test1"
           placeholder="Search product..."
           type="text"
-          onChange={(event) => setFilter(event.target.value)}
+          onChange={(event) => {
+            setFeatured('no');
+            setFilter(event.target.value)
+          }}
           />
           <svg className="input-icon" width="26" height="26" viewBox="0 0 26 26" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -201,9 +206,10 @@ function App() {
 
                     <div className="select categories-filter">
                         <select onChange={(event) => setCategory(event.target.value)} >
+                            <option key={'cat.id'}></option>
                             {
                               categories && categories.map((cat: any) => (
-                                <option key={cat.id}>{cat.name}</option>
+                                <option key={cat.id} value={cat.id}>{cat.name}</option>
                               ))
                             }
 
@@ -212,10 +218,10 @@ function App() {
 
                     <div className="select order-filter">
                         <select onChange={(event) => setSortBy(event.target.value)} >
-                            <option value='hDiscount'>Bigger Discount</option>
-                            <option value='lDiscount'>Lower Discount</option>
-                            <option value='expensive'>HigherPrice</option>
-                            <option value='cheap'>Lower Price</option>
+                            <option value='weight'>Featured</option>
+                            <option value='hDiscount'>Discount: High to Low</option>
+                            <option value='expensive'>Price: High to Low</option>
+                            <option value='cheap'>Price: Low to High</option>
                         </select>
                     </div>
 

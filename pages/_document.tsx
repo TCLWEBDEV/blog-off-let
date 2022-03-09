@@ -43,8 +43,8 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-          <link rel="shortcut icon" href="../static/favicon.ico" />
-          <link rel="canonical" href="https://www.off-let.com/" />
+          <link rel="shortcut icon" href="../static/favicon2.png" />
+          <link rel="canonical" href="https://offers.off-let.com/" />
         </Head>
         <body>
           <Main />
