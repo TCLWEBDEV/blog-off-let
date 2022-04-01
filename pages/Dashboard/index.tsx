@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import Avatar from '@mui/material/Avatar';
 import ScrollComponent from 'react-infinite-scroller';
 import api from '../../services/api';
 
@@ -255,9 +256,54 @@ function App() {
             data && data.map((product) => (
               <article key={product.id} className="cardnews">
                   <a href={product.full_link} target="_blank">
-                      <div className="cardnews__image">
-                          <img  src={product.images[0]} alt="" />
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }} className="cardnews__image">
+                          <img style={{
+                            backgroundColor: '#f8f8fa',
+                            width: 130,
+                            maxWidth: 130,
+                            minWidth: 130,
+                            maxHeight: 130,
+                            minHeight: 130,
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            marginTop: 'auto',
+                            marginBottom: 'auto',
+                          }} src={product.images[0]} alt="" />
                       </div>
+                      {/* <Avatar
+                      variant="square"
+                      alt="Offlet"
+                      src={product.images[0]}
+                      sx={{ width: 180, height: 170, backgroundPosition: 'center' }}
+                      /> */}
+                      {/* <div className="cardnews__image">
+                        <div style={{
+                          display: 'block',
+                          backgroundImage: `url(${product.images[0]})`,
+                          backgroundRepeat: 'no-repeat',
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          backgroundColor: '#fff',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          width: 180,
+                          height: 170,
+                        }}/>
+                      </div> */}
+                      {/* <img style={{
+                            backgroundColor: '#f8f8fa',
+                            width: "26%",
+                            maxWidth: 100,
+                            minWidth: 100,
+                            maxHeight: 100,
+                            minHeight: 100,
+                            marginRight: 12,
+                          }} src={product.images[0]} alt="" /> */}
+
                       <div className="cardnews__body">
                           <div className="cardnews__content">
                               <h4 className="cardnews__title">
