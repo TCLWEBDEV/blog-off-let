@@ -1970,15 +1970,19 @@ h4 {
 @media (min-width: 768px) {
   .sidebar {
     padding-left: 40px; } }
-
+/* marcado */
 .s-hero {
   position: relative;
   margin-bottom: 64px;
   background: #212E63;
   padding: 0;
   padding-top: 3%;
-
 }
+@media (max-width: 385px) {
+    .s-hero {
+      max-width: 115%;
+    }
+  }
 @media (max-width: 768px) {
 
     .s-hero {
@@ -2057,13 +2061,25 @@ h4 {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  /* marcado */
   @media (max-width: 768px) {
     .grid-articles {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 24px;
-      width: 124%;
-      margin-left: 2%;
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .grid-articles {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      /* margin-left: 2%; */
+      /* max-width: 115%; */
     }
   }
 
@@ -2083,6 +2099,7 @@ h4 {
       .cardnews a {
         padding: 24px;
         align-items: start; } }
+    /* marcado */
     .cardnews a .cardnews__image {
       flex: 1 0 auto;
       background: #fff;
@@ -2119,6 +2136,17 @@ h4 {
           line-height: 25px;
           margin-top: 0;
           margin-bottom: 8px; }
+      /* marcado */
+      @media (max-width: 768px) {
+        .cardnews a .cardnews__body .cardnews__content .cardnews__title {
+          color: #212e63;
+          font-size: 0.905rem;
+          font-weight: medium;
+          line-height: 18px;
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
+      }
         .cardnews a .cardnews__body .cardnews__content .cardnews__prices {
           position: relative;
           display: flex;
@@ -2136,6 +2164,14 @@ h4 {
             font-size: 1.125rem;
             font-weight: 500;
             line-height: 25px; }
+            @media (max-width: 768px) {
+              .cardnews a .cardnews__body .cardnews__content .cardnews__prices .price {
+                color: #212e63;
+                font-size: 0.905rem;
+                font-weight: 500;
+                line-height: 10px;
+              }
+            }
           .cardnews a .cardnews__body .cardnews__content .cardnews__prices .badge-price {
             position: absolute;
             bottom: 0;
@@ -2147,6 +2183,20 @@ h4 {
             color: #fff;
             background-color: #E83C4D;
             border-radius: 4px; }
+            @media (max-width: 768px) {
+              .cardnews a .cardnews__body .cardnews__content .cardnews__prices .badge-price {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 3px 7px;
+                font-size: 0.65rem;
+                font-weight: 600;
+                line-height: 1;
+                color: #fff;
+                background-color: #E83C4D;
+                border-radius: 4px;
+              }
+            }
         .cardnews a .cardnews__body .cardnews__content .cardnews__expert {
           color: #212e63;
           font-size: 0.875rem;
@@ -2162,8 +2212,19 @@ h4 {
       font-size: 1.2rem;
       color: #7a82a2;
       align-items: center; }
+      @media (max-width: 768px) {
+        .cardnews a .site-offer {
+        display: flex;
+        font-size: 0.71rem;
+        color: #7a82a2;
+        align-items: center; }
+      }
       .cardnews a .site-offer svg {
         margin-right: 6px;
+      }
+      @media (max-width: 768px) {
+        .cardnews a .site-offer svg {
+          margin-right: 4px; }
       }
   .cardnews:hover {
     transform: translateY(-3px); }
@@ -2267,13 +2328,19 @@ h4 {
   display: flex;
   justify-content: space-between;
  }
+ /* marcado */
  @media (max-width: 768px) {
       .filters-bar {
-        margin-left: 4%;
-        width: 120%;
         min-width: 280px;
       }
    }
+  @media (max-width: 385px) {
+    .filters-bar {
+      min-width: 280px;
+      /* margin-left: 4%;
+      width: 120%; */
+    }
+  }
   .filters-bar .categories-filter {
     min-width: 55%; }
     @media (min-width: 768px) {
