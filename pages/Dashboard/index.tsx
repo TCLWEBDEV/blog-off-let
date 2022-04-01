@@ -284,7 +284,7 @@ function App() {
                           data && data.map((product) => (
                             <article key={product.id} className="cardnews">
                                 <a href={product.full_link} target="_blank">
-                                    <div style={{
+                                    {/* <div style={{
                                       display: 'flex',
                                       justifyContent: 'center',
                                       alignItems: 'center',
@@ -295,45 +295,50 @@ function App() {
                                     }} className="cardnews__image">
                                         <img style={{
                                           backgroundColor: '#f8f8fa',
-                                          maxWidth: '90%',
-                                          minWidth: '90%',
-                                          maxHeight: '90%',
-                                          minHeight: '90%',
+                                          // maxWidth: '90%',
+                                          // minWidth: '90%',
+                                          // maxHeight: '90%',
+                                          // minHeight: '90%',
                                           marginLeft: 'auto',
                                           marginRight: 'auto',
                                           marginTop: 'auto',
                                           marginBottom: 'auto',
+                                          backgroundSize: 'cover',
                                         }} src={product.images[0]} alt="" />
-                                    </div>
-                                    {/* <Avatar
-                                    variant="square"
-                                    alt="Offlet"
-                                    src={product.images[0]}
-                                    sx={{ width: 180, height: 170, backgroundPosition: 'center' }}
-                                    /> */}
-                                    {/* <div className="cardnews__image">
+                                    </div> */}
+                                    <div style={{
+                                      display: 'flex',
+                                      justifyContent: 'center',
+                                      alignItems: 'center',
+                                      maxWidth: '40%',
+                                      minWidth: '40%',
+                                      maxHeight: '85%',
+                                      minHeight: '85%',
+                                      backgroundColor: '#f8f8fa',
+                                    }} className="cardnews__image">
                                       <div style={{
-                                        display: 'block',
-                                        backgroundImage: `url(${product.images[0]})`,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        backgroundColor: '#fff',
+                                        maxHeight: '100%',
+                                        maxWidth: '100%',
+                                        display: 'flex',
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        width: 180,
-                                        height: 170,
-                                      }}/>
-                                    </div> */}
-                                    {/* <img style={{
-                                          backgroundColor: '#f8f8fa',
-                                          width: "26%",
-                                          maxWidth: 100,
-                                          minWidth: 100,
-                                          maxHeight: 100,
-                                          minHeight: 100,
-                                          marginRight: 12,
-                                        }} src={product.images[0]} alt="" /> */}
+                                        margin: 0,
+                                        padding: 0,
+                                        border: 'none',
+                                        backgroundColor: '#f8f8fa',
+                                      }} className="cardnews__image">
+                                          <img style={{
+                                            backgroundColor: '#f8f8fa',
+                                            // maxWidth: '100%',
+                                            // minWidth: '90%',
+                                            // maxHeight: '100%',
+                                            // minHeight: '90%',
+                                            height: '100%',
+                                            width: '100%',
+                                            objectFit: 'contain',
+                                          }} src={product.images[0]} alt="" />
+                                      </div>
+                                    </div>
 
                                     <div className="cardnews__body">
                                         <div className="cardnews__content">

@@ -2215,7 +2215,7 @@ h4 {
       @media (max-width: 768px) {
         .cardnews a .site-offer {
         display: flex;
-        font-size: 0.71rem;
+        font-size: 0.7rem;
         color: #7a82a2;
         align-items: center; }
       }
