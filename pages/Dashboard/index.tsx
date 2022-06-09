@@ -177,6 +177,9 @@ function App() {
               <li className="menu-item">
                 <a href="/privacy" target="_blank">Privacy</a>
               </li>
+              <li className="menu-item">
+                <a href="/newoffer" target="_blank">New Offer</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -236,7 +239,7 @@ function App() {
 
                         <div className="select categories-filter">
                             <select onChange={(event) => setCategory(event.target.value)} >
-                                <option key={'cat.id'}></option>
+                                <option key={'cat.id'}>{categories ? categories[0].name: ''}</option>
                                 {
                                   categories && categories.map((cat: any) => (
                                     <option key={cat.id} value={cat.id}>{cat.name}</option>

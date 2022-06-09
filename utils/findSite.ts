@@ -1,20 +1,12 @@
 export const findSite = (str: string) => {
   // let regexp = /[A-Z]/;
   // let key = str.search(regexp)
-  const indexAmazon = str.indexOf("amazon.com");
-  if (indexAmazon > -1) {
-    return 'amazon';
+  const link = str.split('/', 3)
+  console.log('link', link[2]);
+  const linkless = link[2]?.split('www.');
+  console.log('link final', linkless);
+  if (linkless?.[1]) {
+    return linkless?.[1]
   }
-  const indexWalmart = str.indexOf("walmart.com");
-  if(indexWalmart > -1) {
-    return 'walmart';
-  }
-  const indexAliexpress = str.indexOf("aliexpress.com");
-  if(indexAliexpress > -1) {
-    return 'aliexpress';
-  }
-  const indexBestBuy = str.indexOf("bestbuy.com");
-  if(indexBestBuy > -1) {
-    return 'bestbuy';
-  }
+  return linkless?.[0]
 }

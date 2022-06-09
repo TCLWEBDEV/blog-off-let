@@ -2085,6 +2085,16 @@ h4 {
 
 .cardnews {
   transition: all .2s linear; }
+  .cardnewshh {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0px 8px 32px -12px rgba(33, 46, 99, 0.08);
+    transition: all .2s linear; }
   .cardnews a {
     display: flex;
     flex-direction: row;
@@ -2098,6 +2108,9 @@ h4 {
     @media (min-width: 768px) {
       .cardnews a {
         padding: 24px;
+        align-items: start; }
+        .cardnewsh div {
+        padding: 24px;
         align-items: start; } }
     /* marcado */
     .cardnews a .cardnews__image {
@@ -2110,15 +2123,37 @@ h4 {
       margin-right: 24px;
       max-width: 12rem;
       height: 96px; }
+      .cardnewsh div .cardnews__image {
+      flex: 1 0 auto;
+      background: #fff;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #edeef3;
+      border-radius: 8px;
+      margin-right: 24px;
+      max-width: 12rem;
+      height: 96px; }
       @media (max-width: 768px) {
         .cardnews a .cardnews__image {
           width: 96px;
-          height: 96px; } }
+          height: 96px; }
+          .cardnewsh div .cardnews__image {
+          width: 96px;
+          height: 96px; }}
       @media (min-width: 768px) {
     .cardnews a .cardnews__image {
       width: 12.0rem;
+      height: 180px; }
+      .cardnewsh div .cardnews__image {
+      width: 12.0rem;
+      height: 180px; }
+      .cardnewsh div .cardnews__image {
+      width: 12.0rem;
       height: 180px; } }
       .cardnews a .cardnews__image img {
+        width: 100%;
+        height: 100%; }
+        .cardnewsh div .cardnews__image img {
         width: 100%;
         height: 100%; }
     .cardnews a .cardnews__body {
@@ -2126,10 +2161,25 @@ h4 {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
+      .cardnewsh div .cardnews__body {
+      flex: 0 1 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
       .cardnews a .cardnews__body .cardnews__content {
         display: flex;
         flex-direction: column; }
+      .cardnewsh div .cardnews__body .cardnews__content {
+        display: flex;
+        flex-direction: column; }
         .cardnews a .cardnews__body .cardnews__content .cardnews__title {
+          color: #212e63;
+          font-size: 1.125rem;
+          font-weight: medium;
+          line-height: 25px;
+          margin-top: 0;
+          margin-bottom: 8px; }
+          .cardnewsh div .cardnews__body .cardnews__content .cardnews__title {
           color: #212e63;
           font-size: 1.125rem;
           font-weight: medium;
@@ -2146,8 +2196,21 @@ h4 {
           margin-top: 0;
           margin-bottom: 8px;
         }
+        .cardnewsh div .cardnews__body .cardnews__content .cardnews__title {
+          color: #212e63;
+          font-size: 0.905rem;
+          font-weight: medium;
+          line-height: 18px;
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
       }
         .cardnews a .cardnews__body .cardnews__content .cardnews__prices {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px; }
+        .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices {
           position: relative;
           display: flex;
           flex-direction: column;
@@ -2164,6 +2227,18 @@ h4 {
             font-size: 1.125rem;
             font-weight: 500;
             line-height: 25px; }
+            .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices .promotionalprice {
+            color: #7981a1;
+            font-size: 0.8125rem;
+            font-weight: normal;
+            line-height: 18px;
+            margin-bottom: 4px;
+            text-decoration: line-through; }
+          .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices .price {
+            color: #212e63;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 25px; }
             @media (max-width: 768px) {
               .cardnews a .cardnews__body .cardnews__content .cardnews__prices .price {
                 color: #212e63;
@@ -2171,8 +2246,25 @@ h4 {
                 font-weight: 500;
                 line-height: 10px;
               }
+              .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices .price {
+                color: #212e63;
+                font-size: 0.905rem;
+                font-weight: 500;
+                line-height: 10px;
+              }
             }
           .cardnews a .cardnews__body .cardnews__content .cardnews__prices .badge-price {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #fff;
+            background-color: #E83C4D;
+            border-radius: 4px; }
+          .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices .badge-price {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -2196,8 +2288,30 @@ h4 {
                 background-color: #E83C4D;
                 border-radius: 4px;
               }
+              .cardnewsh div .cardnews__body .cardnews__content .cardnews__prices .badge-price {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 3px 7px;
+                font-size: 0.65rem;
+                font-weight: 600;
+                line-height: 1;
+                color: #fff;
+                background-color: #E83C4D;
+                border-radius: 4px;
+              }
             }
         .cardnews a .cardnews__body .cardnews__content .cardnews__expert {
+          color: #212e63;
+          font-size: 0.875rem;
+          font-weight: normal;
+          line-height: 19px;
+          margin-bottom: 16px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden; }
+        .cardnewsh div .cardnews__body .cardnews__content .cardnews__expert {
           color: #212e63;
           font-size: 0.875rem;
           font-weight: normal;
@@ -2212,8 +2326,18 @@ h4 {
       font-size: 1.2rem;
       color: #7a82a2;
       align-items: center; }
+      .cardnewsh div .site-offer {
+      display: flex;
+      font-size: 1.2rem;
+      color: #7a82a2;
+      align-items: center; }
       @media (max-width: 768px) {
         .cardnews a .site-offer {
+        display: flex;
+        font-size: 0.7rem;
+        color: #7a82a2;
+        align-items: center; }
+        .cardnewsh div .site-offer {
         display: flex;
         font-size: 0.7rem;
         color: #7a82a2;
@@ -2222,14 +2346,20 @@ h4 {
       .cardnews a .site-offer svg {
         margin-right: 6px;
       }
+      .cardnewsh div .site-offer svg {
+        margin-right: 6px;
+      }
       @media (max-width: 768px) {
         .cardnews a .site-offer svg {
+          margin-right: 4px; }
+        .cardnewsh div .site-offer svg {
           margin-right: 4px; }
       }
   .cardnews:hover {
     transform: translateY(-3px); }
     .cardnews:hover a {
       box-shadow: 0px 8px 24px -8px rgba(33, 46, 99, 0.24); }
+
 
 .widget {
   margin-bottom: 40px; }
